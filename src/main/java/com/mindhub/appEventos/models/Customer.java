@@ -12,6 +12,7 @@ public class Customer{
     private Long id;
     private String name,lastName,email,password;
     private int age;
+    private Role role = Role.GUEST;
     private boolean activated;
     private Gender gender;
     @OneToMany(mappedBy = "customer")
@@ -31,6 +32,14 @@ public class Customer{
         this.age = age;
         this.activated = activated;
         this.gender = gender;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Long getId() {

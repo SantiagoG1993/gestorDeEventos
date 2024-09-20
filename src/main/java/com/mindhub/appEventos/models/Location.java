@@ -73,6 +73,5 @@ public class Location {
     public void addEventLocation(EventLocation eventLocation){
         eventLocation.setLocation(this);
         eventLocationSet.add(eventLocation);
-
     }
 }
