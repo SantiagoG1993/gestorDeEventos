@@ -20,6 +20,7 @@ public class Event {
     @OneToMany(mappedBy = "event")
     private Set<EventLocation> eventsLocation= new HashSet<>();
 
+    private Boolean isActive = true;
 
     public Event() {
     }
@@ -89,6 +90,14 @@ public class Event {
     public void addEventLocation(EventLocation eventLocation){
         eventsLocation.add(eventLocation);
         eventLocation.setEvent(this);
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public Set<EventLocation> getEventsLocation() {

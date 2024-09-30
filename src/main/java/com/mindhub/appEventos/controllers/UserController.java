@@ -1,4 +1,5 @@
 package com.mindhub.appEventos.controllers;
+
 import com.mindhub.appEventos.dtos.CommentDTO;
 import com.mindhub.appEventos.models.Comment;
 import com.mindhub.appEventos.models.Customer;
@@ -9,13 +10,14 @@ import com.mindhub.appEventos.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/comments")
-public class CommentController {
+@RequestMapping("/api/user")
+public class UserController {
 
     @Autowired
     CommentRepository commentRepository;
@@ -24,14 +26,10 @@ public class CommentController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping
-    public List<CommentDTO> getAllComments(){
-        return commentRepository.findAll().stream().map(CommentDTO::new).collect(Collectors.toList());
-    }
     @PostMapping
-    public ResponseEntity<?>createComment(@RequestParam String comment,
-                                          @RequestParam Long customer_id,
-                                          @RequestParam Long event_id){
+    public ResponseEntity<?> createComment(@RequestParam String comment,
+                                           @RequestParam Long customer_id,
+                                           @RequestParam Long event_id){
         if(comment.isBlank()){
             return new ResponseEntity<>("Please enter comment", HttpStatus.FORBIDDEN);
 
@@ -49,6 +47,4 @@ public class CommentController {
         }
 
     }
-
-
 }

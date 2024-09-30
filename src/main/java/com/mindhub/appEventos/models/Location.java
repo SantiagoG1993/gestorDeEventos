@@ -20,10 +20,9 @@ public class Location {
     public Location() {
     }
 
-    public Location(String name, String img, String location, int capacity) {
+    public Location(String name, String img, int capacity) {
         this.name = name;
         this.img = img;
-        this.location = location;
         this.capacity = capacity;
     }
 

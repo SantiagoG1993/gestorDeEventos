@@ -23,7 +23,7 @@ public class AppEventosApplication {
 			Customer customer1 = new Customer("santiago","gamarra","santi@gmail.com","123",31,true, Gender.MALE);
 			Event event1 = new Event("20","img_demo","exampleName",18);
 			Comment comment1 = new Comment("comentario de prueba");
-			Location location1 = new Location("locationNombre","imgprueba","locationprueba",300);
+			Location location1 = new Location("locationNombre","imgprueba",300);
 			EventLocation eventLocation1 = new EventLocation(LocalDate.now().plusWeeks(3),150);
 
 			customerRepository.save(customer1);

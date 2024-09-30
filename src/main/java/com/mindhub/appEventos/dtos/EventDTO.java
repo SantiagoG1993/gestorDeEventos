@@ -8,6 +8,7 @@ public class EventDTO {
     private String desc,img,name;
     private int age_req;
     private CustomerDTO customer;
+    private Boolean isActive;
 
     public EventDTO() {
     }
@@ -18,6 +19,7 @@ public class EventDTO {
         this.img = event.getImg();
         this.name = event.getDesc();
         this.age_req = event.getAge_req();
+        this.isActive = event.getActive();
     }
 
     public Long getId() {
@@ -40,4 +42,7 @@ public class EventDTO {
         return age_req;
     }
 
+    public Boolean getActive() {
+        return isActive;
+    }
 }

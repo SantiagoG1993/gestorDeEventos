@@ -1,4 +1,4 @@
-package com.mindhub.appEventos.models;
+package com.mindhub.appEventos.models.creationRequests;
 
 import java.time.LocalDate;
 
