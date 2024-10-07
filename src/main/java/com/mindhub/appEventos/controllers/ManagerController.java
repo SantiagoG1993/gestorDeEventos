@@ -2,7 +2,7 @@ package com.mindhub.appEventos.controllers;
 
 import com.mindhub.appEventos.dtos.CommentDTO;
 import com.mindhub.appEventos.dtos.EventDTO;
-import com.mindhub.appEventos.models.creationRequests.CreateEvent;
+import com.mindhub.appEventos.dtos.creationRequests.CreateEvent;
 import com.mindhub.appEventos.models.Event;
 import com.mindhub.appEventos.repositories.CommentRepository;
 import com.mindhub.appEventos.repositories.EventRepository;

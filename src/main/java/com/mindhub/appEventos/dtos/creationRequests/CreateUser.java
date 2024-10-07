@@ -1,4 +1,4 @@
-package com.mindhub.appEventos.models.creationRequests;
+package com.mindhub.appEventos.dtos.creationRequests;
 
 import com.mindhub.appEventos.models.Gender;
 

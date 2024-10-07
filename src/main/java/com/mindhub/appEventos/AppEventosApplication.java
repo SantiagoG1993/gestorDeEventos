@@ -2,10 +2,12 @@ package com.mindhub.appEventos;
 
 import com.mindhub.appEventos.models.*;
 import com.mindhub.appEventos.repositories.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 
@@ -16,11 +18,13 @@ public class AppEventosApplication {
 		SpringApplication.run(AppEventosApplication.class, args);
 	}
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	@Bean
 	public CommandLineRunner initData(CustomerRepository customerRepository, EventRepository eventRepository, CommentRepository commentRepository, EventLocationRepository eventLocationRepository, LocationRepository locationRepository){
 		return args -> {
 
-			Customer customer1 = new Customer("santiago","gamarra","santi@gmail.com","123",31,true, Gender.MALE);
+			Customer customer1 = new Customer("santiago","gamarra","santi@gmail.com",passwordEncoder.encode("123"),31,true, Gender.MALE);
 			Event event1 = new Event("20","img_demo","exampleName",18);
 			Comment comment1 = new Comment("comentario de prueba");
 			Location location1 = new Location("locationNombre","imgprueba",300);
